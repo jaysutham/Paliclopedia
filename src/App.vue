@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/MHlogo.png" id="mainlogo">
+  <Title msg="Keep calm and Hunt On!"/>
+  <input class='searchfield' placeholder="monster name" v-model="this.searchInput"   @keyup.enter="$refs.child.fetchMonster()">
+  <Result v-bind:search='this.searchInput' ref="child"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Title from './components/title.vue'
+import Result from './components/result.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Title,
+    Result
+  },
+  methods: {
+  },
+  data(){
+    return {
+      searchInput: '',
+    }
   }
 }
 </script>
@@ -22,5 +33,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#mainlogo{
+  max-height: 20%;
+  max-width: 20%;
 }
 </style>
