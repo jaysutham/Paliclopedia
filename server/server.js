@@ -20,6 +20,9 @@ app.get("/lookup/:name", async (req, res) => {
     }
 });
 
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+  });
 // app.listen(5000, () => console.log('database server running on port 5000'));
 
 module.exports = app;
