@@ -11,12 +11,12 @@
         <p v-if="this.description" class="bg-gray-100 text-left p-4 antialiased "> {{description}} </p>
 
         <h2 v-if='this.ailment' class="text-2xl p-3 font-normal bg-gray-200"> Ailment </h2>
-        <li v-for='ail in ailment' :key='ail' class="bg-gray-200 text-left list-none p-4">
+        <li v-for='ail in ailment' :key='ail' class="bg-gray-200 text-left list-none p-2">
             {{ail}}
         </li>
 
         <h2 v-if='this.resistance' class="text-2xl p-3 font-normal bg-gray-100"> Resistance </h2>
-        <li v-for='res in resistance' :key='res' class ="bg-gray-100 text-left list-none p-4">
+        <li v-for='res in resistance' :key='res' class ="bg-gray-100 text-left list-none p-2">
             {{res}}
         </li>
 
