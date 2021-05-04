@@ -1,10 +1,19 @@
-const express = require ('express');
-const app = express();
-app.use(express.json());
-const router = require('./routes');
-app.use(router)
+require('dotenv').config();
+const app = require('./server');
+const db = require('./knex');
 
+const PORT = process.env.PORT || 5000;
 
+(async () => {
+    try {
+        console.log('Running migrations....');
+        await db.migrate.latest();
+        console.log('Seeding database...');
+        await db.seed.run();
 
-
-app.listen(5000, () => console.log('database server running on port 5000'));
+        console.log('Starting express...');
+        app.listen(PORT, () => console.log(`database server running on port${PORT}`));
+    } catch (err) {
+        console.error('Error starting app!', err);
+    }
+})();
