@@ -40,6 +40,7 @@ export default {
         fetchMonster(){
             axios.get('/lookup/'+this.search)
             .then((res) => {
+                console.log(res)
                 this.name = res.data.name
                 this.type = res.data.type
                 this.description = res.data.description

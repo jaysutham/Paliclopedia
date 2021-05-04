@@ -1,14 +1,24 @@
 // Update with your config settings.
 
-module.exports = {
+const { parse } = require('pg-connection-string')
 
+let pgconfig;
+
+if(process.env.DATABASE_URL){
+  pgconfig = parse(process.env.DATABASE_URL);
+  pgconfig.ssl = { rejectUnauthorized: false };
+}
+
+let localconfig = {
+  database:'paliclopedia',
+  user:'postgres', 
+  password:'postgres'
+}
+
+module.exports = {
   development: {
     client: 'pg',
-    connection: {
-      database: 'paliclopedia',
-      user:     'postgres',
-      password: 'postgres'
-    },
+    connection: pgconfig || localconfig,
     pool: {
       min: 2,
       max: 10
@@ -32,6 +42,7 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations'
     }
-  }
+  },
+  pgconfig
 
 };

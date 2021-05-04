@@ -1,5 +1,5 @@
 module.exports = {
     devServer: {
-        proxy:process.env.LOCAL_DATABASE
+       proxy: 'http://localhost:5000'
     }
 };
