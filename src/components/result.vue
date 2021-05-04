@@ -1,31 +1,34 @@
 <template>
     <div class='container mx-auto'>
-        <p class="text-4xl p-3 font-bold"> {{name}} </p>
-        <p class="text-2xl p-3 font-thin">{{type}}</p>
+        <container v-if="this.name">
+        <h1 class="text-4xl p-3 font-bold">{{name}}</h1>
+        <h1 class="text-2xl p-3 font-thin">{{type}}</h1>
+        </container>
+        <h1 class="text-4x1 p-3 text-center" v-else> Start searching and happy hunting!</h1>
 
 
-        <h2 class="text-2xl p-3 font-thin bg-gray-100 antialiased   "> Description </h2>
-        <p class="bg-gray-100 text-left p-4 antialiased "> {{description}} </p>
+        <h2 v-if="this.description" class="text-2xl p-3 font-normal bg-gray-100 antialiased   "> Description </h2>
+        <p v-if="this.description" class="bg-gray-100 text-left p-4 antialiased "> {{description}} </p>
 
-        <h2 class="text-2xl p-3 font-thin bg-gray-200"> Ailment </h2>
+        <h2 v-if='this.ailment' class="text-2xl p-3 font-normal bg-gray-200"> Ailment </h2>
         <li v-for='ail in ailment' :key='ail' class="bg-gray-200 text-left list-none p-4">
             {{ail}}
         </li>
 
-        <h2 class="text-2xl p-3 font-thin bg-gray-100"> Resistance </h2>
+        <h2 v-if='this.resistance' class="text-2xl p-3 font-normal bg-gray-100"> Resistance </h2>
         <li v-for='res in resistance' :key='res' class ="bg-gray-100 text-left list-none p-4">
             {{res}}
         </li>
 
 
-        <h2 class="text-2xl p-3 font-thin bg-gray-200 ">Weakness</h2>
-        <li v-for='weakness in weaknesses' :key='weakness' class="bg-gray-200 text-left list-none">
+        <h2 v-if='this.weaknesses' class="text-2xl p-3 font-normal bg-gray-200 ">Weakness</h2>
+        <li v-for='weakness in weaknesses' :key='weakness' class="bg-gray-200 text-left list-none pl-4 p-1">
             {{weakness}}
         </li>
         
 
-        <h2 class="text-2xl p-3 font-thin bg-gray-100">Location</h2>
-        <li v-for='locale in locations' :key='locale' class="bg-gray-200 text-left list-none pb-4 ">
+        <h2 v-if='this.locations' class="text-2xl p-3 font-normal bg-gray-100">Locations</h2>
+        <li v-for='locale in locations' :key='locale' class="bg-gray-200 text-left list-none pl-4 p-1 ">
             {{locale}}
         </li>
     </div>
@@ -70,16 +73,4 @@ export default {
 
 
 <style>
-.resultbox{
-    padding: 50px;
-    border: 0cm;
-}
-.description{
-    text-align: left;
-}
-
-.list{
-    text-align: left;
-}
-    
 </style>
