@@ -1,6 +1,7 @@
 <template>
     <div class='resultbox'>
         <h1> {{name}} </h1>
+        <p class='type'>{{type}}</p>
 
         <h2 class='description'> Description </h2>
         <p class='description'> {{description}} </p>
@@ -20,6 +21,11 @@
             {{weakness}}
         </li>
 
+        <h2 class='list'>Location</h2>
+        <li v-for='locale in locations' :key='locale' class='list'>
+            {{locale}}
+        </li>
+
     </div>
 </template>
 <script>
@@ -35,10 +41,12 @@ export default {
             axios.get('/lookup/'+this.search)
             .then((res) => {
                 this.name = res.data.name
+                this.type = res.data.type
                 this.description = res.data.description
                 this.weaknesses = res.data.weakness
                 this.resistance = res.data.resistance
                 this.ailment = res.data.ailment
+                this.locations = res.data.location
             })
         },
 
@@ -50,10 +58,12 @@ export default {
     data() {
         return{
         name: "",
+        type: "",
         description: "",
         resistance: "",
         weaknesses: "",
         ailment: "",
+        locations: "",
         }
     },
 }

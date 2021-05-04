@@ -5,15 +5,16 @@ exports.seed = function (knex) {
     for (const monster of monsterData){
         const id = monster.id
         const name = monster.name
+        const type = monster.species
         const description = monster.description
 
         const ailment = []
         if (monster.ailments[0] !== undefined){
         for(const ail of monster.ailments){
             if (ail.recovery.items[0] !== undefined){
-                ailment.push(`Ailment: ${ail.name}. Recovery: ${ail.recovery.items[0].name}`)
+                ailment.push(`AILMENT: ${ail.name}  --->  RECOVERY: ${ail.recovery.items[0].name}`)
             } else {
-                ailment.push(`Ailment: ${ail.name}. Recovery: N/A`)
+                ailment.push(`AILMENT: ${ail.name}  --->  RECOVERY: N/A`)
             }
             
         }}
@@ -21,14 +22,19 @@ exports.seed = function (knex) {
         const resistance = []
         if (monster.resistances[0] !== undefined){
         for(const res of monster.resistances){
-            resistance.push(`Element: ${res.element}. Condition: ${res.condition}`)
+            resistance.push(`ELEMENT: ${res.element}  --->  CONDITION: ${res.condition}`)
         }}
 
         const weakness = []
         if (monster.weaknesses[0] !== undefined){
         for(const weak of monster.weaknesses){
-            weakness.push(`Element: ${weak.element}, ${weak.stars}`)
+            weakness.push(`ELEMENT: ${weak.element} ${weak.stars}`)
         }}
+
+        const location = []
+        for(const local of monster.locations){
+            location.push(`${local.name} - ${local.zoneCount}`)
+        }
 
         // const ailment = JSON.stringify(ailmentArr);
         // const resistance = JSON.stringify(resistanceArr);
@@ -37,10 +43,12 @@ exports.seed = function (knex) {
         monsterArr.push({
             id,
             name,
+            type,
             description,
             ailment,
             resistance,
             weakness,
+            location,
         })
     }
 
