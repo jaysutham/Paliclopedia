@@ -14,6 +14,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "dotenv": "^8.2.0",
     "express-vue": "^5.16.0",
     "vue": "^3.0.0"
   },
