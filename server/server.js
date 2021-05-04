@@ -20,6 +20,18 @@ app.get("/lookup/:name", async (req, res) => {
     }
 });
 
+app.get("/lookup", async (req, res) => {
+    try {
+        console.log('loading...');
+        const monsterList = await db.select().table('monster');
+        let result = monsterList.map((mon) => mon.name)
+        res.json(result)
+    } catch (err) {
+        console.log('error loading database', err)
+        res.sendStatus(500)
+    }
+});
+
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
   });

@@ -12,6 +12,7 @@
     "rollback": "node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:rollback --knexfile ./server/knexfile.js"
   },
   "dependencies": {
+    "@vueform/multiselect": "^1.4.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
@@ -22,13 +23,15 @@
     "pg": "^8.6.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-simple-search-dropdown": "^1.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "@vue/composition-api": "^1.0.0-rc.8",
     "babel-eslint": "^10.1.0",
     "chai-http": "^4.3.0",
     "eslint": "^6.7.2",
