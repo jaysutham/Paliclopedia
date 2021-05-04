@@ -5,7 +5,7 @@ const knexConfig = require('./knexfile');
 const knex = require('knex');
 const db = knex(knexConfig.development);
 
-app.use(express.static(path.resolve(__dirname, "..", "build")));
+app.use(express.static(path.resolve(__dirname, "..", "dist")));
 
 app.get("/lookup/:name", async (req, res) => {
     let params = req.params.name
@@ -21,7 +21,7 @@ app.get("/lookup/:name", async (req, res) => {
 });
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
   });
 // app.listen(5000, () => console.log('database server running on port 5000'));
 
