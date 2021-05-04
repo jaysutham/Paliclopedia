@@ -1,8 +1,11 @@
 const express = require ('express');
 const app = express();
+const path = require('path')
 const knexConfig = require('./knexfile');
 const knex = require('knex');
 const db = knex(knexConfig.development);
+
+app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 app.get("/lookup/:name", async (req, res) => {
     let params = req.params.name
