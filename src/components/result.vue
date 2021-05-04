@@ -1,30 +1,34 @@
 <template>
-    <div class='resultbox'>
-        <h1> {{name}} </h1>
-        <p class='type'>{{type}}</p>
+    <div class='container mx-auto'>
+        <p class="text-4xl p-3 font-bold"> {{name}} </p>
+        <p class="text-2xl p-3 font-thin">{{type}}</p>
 
-        <h2 class='description'> Description </h2>
-        <p class='description'> {{description}} </p>
+        <h2 class="text-2xl p-3 font-thin bg-gray-100 antialiased"> Description </h2>
+        <p class="bg-gray-100 text-left p-4 antialiased"> {{description}} </p>
 
-        <h2 class='list'> Ailment </h2>
-        <li v-for='ail in ailment' :key='ail' class = 'list'>
+        <h2 class="text-2xl p-3 font-thin bg-gray-200"> Ailment </h2>
+        <li v-for='ail in ailment' :key='ail' class="bg-gray-200 text-left list-none p-4">
             {{ail}}
         </li>
 
-        <h2 class='list'> Resistance </h2>
-        <li v-for='res in resistance' :key='res' class = 'list'>
+        <h2 class="text-2xl p-3 font-thin bg-gray-100"> Resistance </h2>
+        <li v-for='res in resistance' :key='res' class ="bg-gray-100 text-left list-none p-4">
             {{res}}
         </li>
 
-        <h2 class='list'>Weakness</h2>
-        <li v-for='weakness in weaknesses' :key='weakness' class='list'>
+        <container class="mb-4">
+        <h2 class="text-2xl p-3 font-thin bg-gray-200 ">Weakness</h2>
+        <li v-for='weakness in weaknesses' :key='weakness' class="bg-gray-200 text-left list-none">
             {{weakness}}
         </li>
+        </container>
+        
 
-        <h2 class='list'>Location</h2>
-        <li v-for='locale in locations' :key='locale' class='list'>
+        <h2 class="text-2xl p-3 font-thin bg-gray-100">Location</h2>
+        <li v-for='locale in locations' :key='locale' class="bg-gray-200 text-left list-none ">
             {{locale}}
         </li>
+       
 
     </div>
 </template>

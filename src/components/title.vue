@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="text-4x1">
+    <h1 class="text-4xl p-3 font-bold">{{ msg }}</h1>
   </div>
 </template>
 
