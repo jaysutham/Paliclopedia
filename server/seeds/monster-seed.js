@@ -1,5 +1,9 @@
 const monsterData = require('../../Data/monsters.json');
 
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
 exports.seed = function (knex) {
     const monsterArr = [];
     for (const monster of monsterData){
@@ -12,9 +16,9 @@ exports.seed = function (knex) {
         if (monster.ailments[0] !== undefined){
         for(const ail of monster.ailments){
             if (ail.recovery.items[0] !== undefined){
-                ailment.push(`AILMENT: ${ail.name}  --->  RECOVERY: ${ail.recovery.items[0].name}`)
+                ailment.push(` ${ail.name}, Bring: ${ail.recovery.items[0].name}`)
             } else {
-                ailment.push(`AILMENT: ${ail.name}  --->  RECOVERY: N/A`)
+                ailment.push(`${ail.name}, Bring: N/A`)
             }
             
         }}
@@ -22,13 +26,13 @@ exports.seed = function (knex) {
         const resistance = []
         if (monster.resistances[0] !== undefined){
         for(const res of monster.resistances){
-            resistance.push(`ELEMENT: ${res.element}  --->  CONDITION: ${res.condition}`)
+            resistance.push(`${capitalize(res.element)}, Condition: ${res.condition}`)
         }}
 
         const weakness = []
         if (monster.weaknesses[0] !== undefined){
         for(const weak of monster.weaknesses){
-            weakness.push(`ELEMENT: ${weak.element} ${weak.stars}`)
+            weakness.push(`${capitalize(weak.element)} ${weak.stars}`)
         }}
 
         const location = []

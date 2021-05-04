@@ -9,7 +9,7 @@
   v-model.lazy="searchInput"
   @search-change="this.getTheDamnMonster"
   />
-  <!-- <input class="hover:border-gray-600  shadow appearance-none border rounded py-2 px-3 text-grey-darker" placeholder="monster name" v-model="this.searchInput"   @keyup.enter="$refs.child.fetchMonster()"> -->
+  <!-- <input class="hover:border-gray-600  shadow appearance-none border rounded py-2 px-3 text-grey-darker text-center" placeholder="Search by name..." v-model="this.searchInput"   @keyup.enter="$refs.child.fetchMonster()"> -->
   <Result v-bind:search='this.searchInput' ref="child"/>
 </template>
 
@@ -53,5 +53,5 @@ export default {
 </script>
 
 
-<style  src="@vueform/multiselect/themes/default.css">
+<style src="@vueform/multiselect/themes/default.css">
 </style>

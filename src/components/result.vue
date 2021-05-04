@@ -25,13 +25,12 @@
         
 
         <h2 class="text-2xl p-3 font-thin bg-gray-100">Location</h2>
-        <li v-for='locale in locations' :key='locale' class="bg-gray-200 text-left list-none pb-10 ">
+        <li v-for='locale in locations' :key='locale' class="bg-gray-200 text-left list-none pb-4 ">
             {{locale}}
         </li>
-       
-
     </div>
 </template>
+
 <script>
 import axios from 'axios'
 
@@ -54,11 +53,6 @@ export default {
                 this.locations = res.data.location
             })
         },
-
-        filter(string){
-            let result = string.replace('"', '')
-            return result
-        }
     },
     data() {
         return{
