@@ -36,7 +36,7 @@ npm run dev
 
 ### Tailwind & CSS
 
-Please stick to the color theme. It has to be soothing to the eye, and color blind friendly.
+Please stick to the color theme. It has to be soothing to the eye, and color-blind friendly.
 Color used can be found in tailwind.config.js
 
 Happy Hunting! (for bugs)
