@@ -1,5 +1,5 @@
-# paliclopedia
-Welcome to Paliclopedia! An easy to access Monster Hunter helper web application. 
+# paliclo
+Welcome to Paliclo! An easy to access Monster Hunter helper web application. 
 
 Now you might be thinking.. "But there's like a million Monster Hunter database already.." Well... None of them is as simple as this!
 
@@ -16,6 +16,7 @@ If you want to work on the database, create an SQL database with the name 'palic
 To create table and Seed information on your local Database run...
 ```
 npm start
+
 ```
 
 If you'd like to rename your local Database, make changes in the ./server/knexfile.js  --- in localconfig variable then run NPM start
@@ -24,11 +25,18 @@ If you'd like to rename your local Database, make changes in the ./server/knexfi
 ### Run Rollback
 ```
 npm run rollback
+
 ```
 
 ### Run nodemon with backend
 ```
 npm run dev
+
 ```
+
+### Tailwind & CSS
+
+Please stick to the color theme. It has to be soothing to the eye, and color blind friendly.
+Color used can be found in tailwind.config.js
 
 Happy Hunting! (for bugs)
