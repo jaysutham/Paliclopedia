@@ -1,24 +1,34 @@
 # paliclopedia
+Welcome to Paliclopedia! An easy to access Monster Hunter helper web application. 
 
-## Project setup
+Now you might be thinking.. "But there's like a million Monster Hunter database already.." Well... None of them is as simple as this!
+
+The sole purpose of the application is to provide an EASY, CLEAN, and CLEAR UI which provides only the most important information of a monster. There shouldn't be too much information!
+
+Feel free to pull and work on it! But Remember! EASY CLEAN CLEAR (We don't want another Kiranico)
+
+## To Set up
 ```
 npm install
 ```
+If you want to work on the database, create an SQL database with the name 'paliclopedia'.
 
-### Compiles and hot-reloads for development
+To create table and Seed information on your local Database run...
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm start
 ```
 
-### Lints and fixes files
+If you'd like to rename your local Database, make changes in the ./server/knexfile.js  --- in localconfig variable then run NPM start
+
+
+### Run Rollback
 ```
-npm run lint
+npm run rollback
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Run nodemon with backend
+```
+npm run dev
+```
+
+Happy Hunting! (for bugs)
