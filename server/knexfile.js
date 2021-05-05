@@ -10,7 +10,7 @@ if(process.env.DATABASE_URL){
 }
 
 let localconfig = {
-  database:'paliclopedia',
+  database:'paliclopedia', //Or put whatever your local database name is here..
   user:'postgres', 
   password:'postgres'
 }

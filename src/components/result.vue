@@ -1,36 +1,44 @@
 <template>
-    <div class='container mx-auto'>
-        <container v-if="this.name">
-        <h1 class="text-4xl p-3 font-bold">{{name}}</h1>
-        <h1 class="text-2xl p-3 font-thin">{{type}}</h1>
-        </container>
+    <div class='container mx-auto rounded-lg '>
+        <div v-if="this.name" class="rounded-lg pt-1 mt-2 mb-2 mr-2 ml-2">
+        <h1 class="text-4xl p-3 font-bold bg-brown text-gray-800 rounded-lg text-center">{{name}}</h1>
+        <h1 class="text-2xl p-3 text-gray-800 rounded-lg text-center">{{type}}</h1>
+        </div>
         <h1 class="text-4x1 p-3 text-center" v-else> Start searching and happy hunting!</h1>
 
+        <div v-if="this.description" class="rounded-lg bg-yellow-600 pt-1 mt-2 mb-2 mr-2 ml-2 p-3">
+        <h2 v-if="this.description" class="text-2xl p-3 font-semibold rounded-lg  text-center text-gray-900 pb-3"> Description </h2>
+        <p v-if="this.description" class=" text-left rounded-lg p-4 text-gray-800 "> {{description}} </p>
+        </div>
 
-        <h2 v-if="this.description" class="text-2xl p-3 font-normal bg-gray-100 antialiased   "> Description </h2>
-        <p v-if="this.description" class="bg-gray-100 text-left p-4 antialiased "> {{description}} </p>
-
-        <h2 v-if='this.ailment' class="text-2xl p-3 font-normal bg-gray-200"> Ailment </h2>
-        <li v-for='ail in ailment' :key='ail' class="bg-gray-200 text-left list-none p-2">
+        <div v-if="this.ailment" class="rounded-lg bg-yellow-700 pt-1 mt-2 mb-2 pb-3 mr-2 ml-2 p-3">
+        <h2 class="text-2xl p-3 font-semibold rounded-lg text-gray-900 text-center"> Ailment </h2>
+        <li v-for='ail in ailment' :key='ail' class="font-semibold text-left list-none p-2 text-gray-800 inline-flex">
             {{ail}}
         </li>
+        </div>
 
-        <h2 v-if='this.resistance' class="text-2xl p-3 font-normal bg-gray-100"> Resistance </h2>
-        <li v-for='res in resistance' :key='res' class ="bg-gray-100 text-left list-none p-2">
+        <div v-if='this.resistance' class="rounded-lg bg-yellow-600 pt-1 mt-2 mb-2 pb-3 mr-2 ml-2 p-3">
+        <h2  class="text-2xl p-3 font-semibold rounded-lg text-gray-900 text-center "> Resistance </h2>
+        <li v-for='res in resistance' :key='res' class ="font-semibold  text-left list-none p-2 text-gray-800 inline-flex">
             {{res}}
         </li>
+        </div>
 
 
-        <h2 v-if='this.weaknesses' class="text-2xl p-3 font-normal bg-gray-200 ">Weakness</h2>
-        <li v-for='weakness in weaknesses' :key='weakness' class="bg-gray-200 text-left list-none pl-4 p-1">
+        <div v-if="this.weaknesses" class="rounded-lg bg-yellow-700 pt-1 mt-2 mb-2 pb-3 mr-2 ml-2">
+        <h2 class="text-2xl p-3 font-semibold text-gray-900 text-center ">Weakness</h2>
+        <li v-for='weakness in weaknesses' :key='weakness' class="font-semibold text-left list-none pl-4 p-3 text-gray-800 inline-flex ">
             {{weakness}}
         </li>
-        
+        </div>
 
-        <h2 v-if='this.locations' class="text-2xl p-3 font-normal bg-gray-100">Locations</h2>
-        <li v-for='locale in locations' :key='locale' class="bg-gray-200 text-left list-none pl-4 p-1 ">
+        <div v-if='this.locations' class="rounded-lg bg-yellow-600 pt-1 mt-2 mb-10 pb-3 mr-2 ml-2">
+        <h2 class="text-2xl p-3 font-semibold  rounded-lg text-gray-900 text-center">Locations</h2>
+        <li v-for='locale in locations' :key='locale' class="font-semibold text-bold text-left list-none pl-4 p-1 text-gray-800 inline-flex">
             {{locale}}
         </li>
+        </div>
     </div>
 </template>
 
