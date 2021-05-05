@@ -53,7 +53,11 @@ export default {
 
 <style>
 body{
-  background-color: #f8b77a;
+  background-color: #ffca98;
+}
+
+back{
+  background-color: #f8a14f;
 }
 
 .multiselect{position:relative;margin:10 auto;font-size:0;align-items:center;}
