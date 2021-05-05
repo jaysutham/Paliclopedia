@@ -16,7 +16,6 @@ If you want to work on the database, create an SQL database with the name 'palic
 To create table and Seed information on your local Database run...
 ```
 npm start
-
 ```
 
 If you'd like to rename your local Database, make changes in the ./server/knexfile.js  --- in localconfig variable then run NPM start
@@ -25,14 +24,18 @@ If you'd like to rename your local Database, make changes in the ./server/knexfi
 ### Run Rollback
 ```
 npm run rollback
-
 ```
 
 ### Run nodemon with backend
 ```
 npm run dev
-
 ```
+
+###Building the App
+```
+npm run build
+```
+This will build the /dist folder and allows you to run your vue page with the database.
 
 ### Tailwind & CSS
 
