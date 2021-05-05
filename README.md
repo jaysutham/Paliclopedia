@@ -31,13 +31,13 @@ npm run rollback
 npm run dev
 ```
 
-###Building the App
+### Building the App
 ```
 npm run build
 ```
 This will build the /dist folder and allows you to run your vue page with the database.
 
-###Tailwind & CSS
+### Tailwind & CSS
 
 Please stick to the color theme. It has to be soothing to the eye, and color-blind friendly.
 Color used can be found in tailwind.config.js
